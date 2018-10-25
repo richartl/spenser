@@ -1,0 +1,29 @@
+version: '3'
+services:
+  rails:
+      image: ruby:2.3
+      hostname: "${PROJECT_NAME}_rails"
+      container_name: "${PROJECT_NAME}_rails"
+      ports:
+        - "${RAILS_PORT}:3000"
+      volumes:
+        - "./${PROJECT_ROOT}:/usr/src/app"
+      environment:
+        RAILS_ENV: "${RAILS_ENV}"
+      working_dir: /usr/src/app
+      links:
+        - postgresql
+      entrypoint: ./postinstall
+
+  postgresql:
+      image: postgres
+      hostname: "${PROJECT_NAME}_db"
+      container_name: "${PROJECT_NAME}_db"
+      volumes:
+        - db-data-nimanic-emida:/var/lib/postgresql/data
+      environment:
+          POSTGRES_DB: "${DB_NAME}"
+          POSTGRES_USER: "${DB_USERNAME}"
+          POSTGRES_PASSWORD: "${DB_PASSWORD}"
+volumes:
+  db-data-nimanic-emida:

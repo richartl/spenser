@@ -1,0 +1,29 @@
+{
+    "staging": {
+        "url": "54.190.134.5",
+        "user": "ubuntu",
+        "group": "www-data",
+        "hosts": ["ubuntu@54.190.134.5"],
+        "public_dir": "/home/ubuntu/vhosts/nimanic-emida/",
+        "cpchuy_dir": "/home/ubuntu/vhosts/nimanic-emida/",
+        "command_prefixes": [],
+        "dbname": "dxc",
+        "dbuser": "dxc",
+        "dbpassword": "password",
+        "dbhost": "localhost",
+        "exclude": [
+            ".env",
+            "environments.json",
+            "fabfile.py",
+            "conf/",
+            "CONTRIBUTING.md",
+            ".git/",
+            ".gitignore",
+            ".gitmodules",
+            "src/tmp/",
+            "README.md",
+            "src/log/*",
+            "dumps/*"
+        ]
+    }
+}

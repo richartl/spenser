@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Chuy environments",
+    "description": "List of environments",
+    "type": "object",
+    "properties": {
+        "url": {
+            "description": "Chuy URL",
+            "type": "string"
+        },
+        "user": {
+            "description": "Server's user",
+            "type": "string"
+        },
+        "group": {
+            "description": "Server's group",
+            "type": "string"
+        },
+        "hosts": {
+            "description": "hosts list",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "public_dir": {
+            "description": "server's public directory",
+            "type": "string",
+            "pattern": "^/.*/$"
+        },
+        "cpchuy_dir": {
+            "description": "server's src directory",
+            "type": "string",
+            "pattern": "^/.*/$"
+        },
+        "dbname": {
+            "description": "proyect' database name",
+            "type": "string"
+        },
+        "dbuser": {
+            "description": "proyect' database user",
+            "type": "string"
+        },
+        "dbpassword": {
+            "description": "proyect' database password",
+            "type": "string"
+        },
+        "dbhost": {
+            "description": "proyect' datbase host",
+            "type": "string"
+        },
+        "exclude": {
+            "description": "sync exclude",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true
+        },
+        "command_prefixes": {
+            "description": "command prefixes' list",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "url", "user", "group", "hosts", "public_dir", "cpchuy_dir",
+        "command_prefixes", "dbname", "dbuser", "dbpassword", "dbhost",
+        "exclude"
+    ]
+}
