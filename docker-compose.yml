@@ -20,10 +20,10 @@ services:
       hostname: "${PROJECT_NAME}_db"
       container_name: "${PROJECT_NAME}_db"
       volumes:
-        - db-data-nimanic-emida:/var/lib/postgresql/data
+        - db-data-spenser:/var/lib/postgresql/data
       environment:
           POSTGRES_DB: "${DB_NAME}"
           POSTGRES_USER: "${DB_USERNAME}"
           POSTGRES_PASSWORD: "${DB_PASSWORD}"
 volumes:
-  db-data-nimanic-emida:
+  db-data-spenser:
